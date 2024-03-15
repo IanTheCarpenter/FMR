@@ -53,14 +53,12 @@ function get-FMRByFIPS ($FIPS, $zip, $currentYear=$null) {
 
 
 function HUDapiCall ($url) {
-    $auth = @{Authorization="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI2IiwianRpIjoiNjU4M2RlODk5ZDQzYjkzZTk5OWNlMTVmMzhhZjEyNWU1N2FiMmI1NmYxYmY0M2VlNWM0NjQ2MzA4YzgyOWY3MjA1OGYyMzk2MTlkMDVmNTMiLCJpYXQiOjE3MDY4OTgyMzMuODEyNjA4LCJuYmYiOjE3MDY4OTgyMzMuODEyNjExLCJleHAiOjIwMjI1MTc0MzMuODA4NDk3LCJzdWIiOiI2NTMwMiIsInNjb3BlcyI6W119.KuZlD73osuCS3cZfmHscPPSYnPga6Nx5I3SSe4zDi1jENUxc6NujOtFpfAZ_yOmKDlJFIgbuEz7FzLHhM353Hg"}
     
     return (Invoke-WebRequest $url -Headers $auth ).content | ConvertFrom-Json
 }
 
 
 function HUDapiCall2 ($url) {
-    $auth = @{Authorization="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI2IiwianRpIjoiNjU4M2RlODk5ZDQzYjkzZTk5OWNlMTVmMzhhZjEyNWU1N2FiMmI1NmYxYmY0M2VlNWM0NjQ2MzA4YzgyOWY3MjA1OGYyMzk2MTlkMDVmNTMiLCJpYXQiOjE3MDY4OTgyMzMuODEyNjA4LCJuYmYiOjE3MDY4OTgyMzMuODEyNjExLCJleHAiOjIwMjI1MTc0MzMuODA4NDk3LCJzdWIiOiI2NTMwMiIsInNjb3BlcyI6W119.KuZlD73osuCS3cZfmHscPPSYnPga6Nx5I3SSe4zDi1jENUxc6NujOtFpfAZ_yOmKDlJFIgbuEz7FzLHhM353Hg"}
     
     $call = Invoke-WebRequest $url -Headers $auth
     
