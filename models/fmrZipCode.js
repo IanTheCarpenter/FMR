@@ -1,8 +1,14 @@
 const mongoose = require('mongoose')
 
 const zipcodeSchema = mongoose.Schema({
-    code: {
+    zip_code: {
         type: String,
-        required:[true, 'must provide a code'],
+        required:[true, 'Must provide a code'],
+    },
+    data: {
+        type: Object,
+        required:[true, 'Zip codes must have data']
     }
 })
+
+module.exports = mongoose.model('ZipCode', zipcodeSchema)
