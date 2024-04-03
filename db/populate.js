@@ -2,7 +2,7 @@ require('dotenv').config()
 const connectDB = require('./connect.js')
 const ZipCode = require('../models/fmrZipCode')
 
-const zipCodeData = require('../zipcodes_database_v2.json')
+const zipCodeData = require('../data/zipcodes_database_v2.json')
 
 
 const main = async () => {
