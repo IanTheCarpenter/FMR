@@ -7,6 +7,13 @@ require('dotenv').config()
 
 PORT = 3001 || process.env.PORT 
 app.use(cors())
+
+const test_router = express.router()
+test_router.route('/').get((req, res) => {
+    res.send('hi')
+})
+
+app.use('/', test_router)
 app.use('/api/v1/ziplookup', zipCodeLookupRouter)
 
 await connectDB(process.env.MONGO_URI)
