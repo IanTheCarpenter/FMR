@@ -8,7 +8,7 @@ require('dotenv').config()
 PORT = 3001 || process.env.PORT 
 app.use(cors())
 
-const test_router = express.router()
+const test_router = app.router()
 test_router.route('/').get((req, res) => {
     res.send('hi')
 })

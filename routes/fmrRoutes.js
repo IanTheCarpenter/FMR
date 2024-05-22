@@ -9,8 +9,4 @@ const {
 
 router.route('/:zip_code').get(zipLookup)
 
-router.route('/').get((req, res) => {
-    res.send('hi')
-})
-g
 module.exports = router
