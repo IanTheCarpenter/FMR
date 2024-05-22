@@ -16,16 +16,16 @@ test_router.route('/').get((req, res) => {
 app.use('/', test_router)
 app.use('/api/v1/ziplookup', zipCodeLookupRouter)
 
-await connectDB(process.env.MONGO_URI)
-app.listen(PORT, console.log(`Server listening on port ${PORT}`))
-// const start = async () => {
-//     try {
-//     }
-//     catch (err) {
-//         console.log(err)
-//         console.log('***** UNABLE TO START SERVER *****')
-//     }
-// }
-// start()
+const start = async () => {
+    try {
+        await connectDB(process.env.MONGO_URI)
+        app.listen(PORT, console.log(`Server listening on port ${PORT}`))
+    }
+    catch (err) {
+        console.log(err)
+        console.log('***** UNABLE TO START SERVER *****')
+    }
+}
+start()
 
 module.exports = app
