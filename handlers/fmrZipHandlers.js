@@ -1,5 +1,4 @@
 const zipCode = require('../models/fmrZipCode')
-const delay = (ms) => new Promise(res => setTimeout(res,ms))
 async function zipLookup(req, res) {
     const { zip_code } = req.params
 
