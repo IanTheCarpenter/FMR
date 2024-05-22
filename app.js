@@ -1,10 +1,12 @@
 const app = require('express')()
+const cors = require('cors')
+
 const connectDB = require('./db/connect')
 const zipCodeLookupRouter = require('./routes/fmrRoutes')
 require('dotenv').config()
 
-PORT = 3000 || process.env.PORT 
-
+PORT = 3001 || process.env.PORT 
+app.use(cors())
 app.use('/api/v1/ziplookup', zipCodeLookupRouter)
 
 const start = async () => {
