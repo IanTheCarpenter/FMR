@@ -3,10 +3,8 @@ const express = require('express')
 const router = express.Router()
 
 // handler functions
-const {
-    zipLookup
-} = require('../handlers/fmrZipHandlers')
+const { fmrDataLookup } = require('../handlers/fmrZipHandlers')
 
-router.route('/:zip_code').get(zipLookup)
+router.route('/:identifier').get(fmrDataLookup)
 
 module.exports = router

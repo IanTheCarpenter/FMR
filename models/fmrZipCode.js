@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const zipcodeSchema = mongoose.Schema({
-    zip_code: {
+    identifier: {
         type: String,
-        required:[true, 'Must provide a code'],
+        required:[true, 'Must provide an identifier. Use either a zip code or CBSA code'],
     },
     data: {
         type: Object,

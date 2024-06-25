@@ -1,8 +1,8 @@
 const zipCode = require('../models/fmrZipCode')
-async function zipLookup(req, res) {
-    const { zip_code } = req.params
+async function fmrDataLookup(req, res) {
+    const { identifier } = req.params
 
-    fmr_data = await zipCode.findOne({zip_code: zip_code})
+    fmr_data = await zipCode.findOne({identifier: identifier})
     if (fmr_data) {
         res.status(201).send(fmr_data)
     }
@@ -13,5 +13,5 @@ async function zipLookup(req, res) {
 }
 
 module.exports = {
-    zipLookup
+    fmrDataLookup
 }
