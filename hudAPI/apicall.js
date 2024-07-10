@@ -1,14 +1,14 @@
 require('dotenv').config()
 const delay = (ms) => new Promise(res => setTimeout(res,ms))
+const request_options = {
+    method: 'GET',
+    headers: {
+        Authorization: process.env.HUD_API_KEY
+    }
+}
 
 async function apiCall(url) {
-    const request_options = {
-        method: 'GET',
-        headers: {
-            Authorization: process.env.HUD_API_KEY
-        }
-    }
-    api_URL = 'https://www.huduser.gov/hudapi/public'
+    api_URL = 'https://www.huduser.gov/hudapi/public/fmr/data'
     console.log(`calling: ${api_URL}/${url}`)
 
     

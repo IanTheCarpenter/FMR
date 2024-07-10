@@ -1,7 +1,6 @@
 const app = require('express')()
 const cors = require('cors')
 
-const connectDB = require('./db/connect')
 const zipCodeLookupRouter = require('./routes/fmrRoutes')
 require('dotenv').config()
 
@@ -12,7 +11,6 @@ app.use('/api/v1/ziplookup', zipCodeLookupRouter)
 
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URI)
         app.listen(PORT, console.log(`Server listening on port ${PORT}`))
     }
     catch (err) {
